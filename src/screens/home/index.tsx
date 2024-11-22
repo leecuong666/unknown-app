@@ -1,5 +1,6 @@
-import {Platform, SafeAreaView, StyleSheet, View} from 'react-native';
-import React, {useEffect, useState} from 'react';
+/* eslint-disable prettier/prettier */
+import {SafeAreaView, StyleSheet, View} from 'react-native';
+import React, {useState} from 'react';
 import Progessbar from '../../components/Progessbar';
 import TextList from './TextList';
 import voiceData from '../../data/voice-detect.json';
@@ -43,6 +44,7 @@ const styles = StyleSheet.create({
   },
 
   pgContainer: {
+    flexGrow: 0.03,
     width: '100%',
     alignItems: 'center',
   },
