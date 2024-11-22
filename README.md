@@ -33,6 +33,8 @@ xed ios
 ```
 
 Waiting for Xcode tool and follow image below
+![xcode](https://github.com/user-attachments/assets/bc5c4e39-3355-4ca9-a6f9-56396d034527)
+
 
 **Android:**
 
