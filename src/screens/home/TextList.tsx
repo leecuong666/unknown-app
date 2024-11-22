@@ -1,6 +1,6 @@
 import React, {useCallback} from 'react';
-import {NBest, Word} from '../../types/voiceText';
-import TextHighlight from './TextHighlight';
+import {NBest, Word as WordType} from '../../types/voiceText';
+import TextHighlight from '../../components/TextHighlight';
 import {FlatList, StyleSheet} from 'react-native';
 import {tickToNanoS, Time, timeConvert} from '../../util/datetime';
 
@@ -11,7 +11,7 @@ interface Props {
 
 const TextList = ({data, currTime}: Props) => {
   const renderItem = useCallback(
-    ({item}: {item: Word}) => {
+    ({item}: {item: WordType}) => {
       const {Word, Offset, Duration} = item;
 
       const newOffset = timeConvert(tickToNanoS(Offset), Time.nanoSecond);
