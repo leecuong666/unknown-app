@@ -1,0 +1,44 @@
+{
+  "Id": "b66a57894af54971ac71574a467f4fcb",
+  "RecognitionStatus": 0,
+  "Offset": 2700000,
+  "Duration": 19600000,
+  "Channel": 0,
+  "DisplayText": "I don't know if I have the time.",
+  "NBest": [
+    {
+      "Confidence": 0.871681,
+      "Lexical": "i don't know if i have the time",
+      "ITN": "i don't know if i have the time",
+      "MaskedITN": "i don't know if i have the time",
+      "Display": "I don't know if I have the time.",
+      "Words": [
+        {
+          "Word": "Thầy ơi,",
+          "Offset": 2700000,
+          "Duration": 400000
+        },
+        {
+          "Word": "cho em",
+          "Offset": 11500000,
+          "Duration": 3600000
+        },
+        {
+          "Word": "xin nghỉ",
+          "Offset": 15100000,
+          "Duration": 2000000
+        },
+        {
+          "Word": "ốm",
+          "Offset": 15100000,
+          "Duration": 2000000
+        },
+        {
+          "Word": "ngày mai",
+          "Offset": 15100000,
+          "Duration": 2000000
+        }
+      ]
+    }
+  ]
+}

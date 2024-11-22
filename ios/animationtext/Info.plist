@@ -39,6 +39,8 @@
 	<string></string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Give $(PRODUCT_NAME) permission to use your microphone. Your record wont be shared without your permission.</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
