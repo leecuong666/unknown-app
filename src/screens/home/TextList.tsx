@@ -1,8 +1,8 @@
-import React from 'react';
-import {NBest} from '../../types/voiceText';
-import {FlashList} from '@shopify/flash-list';
+import React, {useCallback} from 'react';
+import {NBest, Word} from '../../types/voiceText';
 import TextHighlight from './TextHighlight';
 import {FlatList, StyleSheet} from 'react-native';
+import {tickToNanoS, Time, timeConvert} from '../../util/datetime';
 
 interface Props {
   data: NBest;
@@ -10,12 +10,25 @@ interface Props {
 }
 
 const TextList = ({data, currTime}: Props) => {
+  const renderItem = useCallback(
+    ({item}: {item: Word}) => {
+      const {Word, Offset, Duration} = item;
+
+      const newOffset = timeConvert(tickToNanoS(Offset), Time.nanoSecond);
+      const newDuration = timeConvert(tickToNanoS(Duration), Time.nanoSecond);
+
+      const isHighlight =
+        currTime >= newOffset && currTime <= newOffset + newDuration;
+
+      return <TextHighlight word={Word} isHL={isHighlight} />;
+    },
+    [currTime],
+  );
+
   return (
     <FlatList
       data={data.Words}
-      renderItem={({item, index}) => (
-        <TextHighlight {...item} isHL={currTime === index} />
-      )}
+      renderItem={renderItem}
       horizontal
       scrollEnabled={false}
       extraData={currTime}

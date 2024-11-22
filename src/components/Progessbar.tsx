@@ -7,10 +7,12 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 import {Gesture, GestureDetector} from 'react-native-gesture-handler';
+import {fixedNum} from '../util/num';
 
 interface Props {
   val: number;
   maxVal?: number;
+  decimalCount?: number;
   onChange: (val: number) => void;
 }
 
@@ -18,7 +20,7 @@ function clamp(val: number, min: number, max: number) {
   return Math.min(Math.max(val, min), max);
 }
 
-const Progessbar = ({val, maxVal = 1, onChange}: Props) => {
+const Progessbar = ({val, decimalCount = 1, maxVal = 1, onChange}: Props) => {
   const w = useSharedValue(val);
   const scale = useSharedValue(1);
   const [isDrag, setIsDrag] = useState(false);
@@ -27,14 +29,14 @@ const Progessbar = ({val, maxVal = 1, onChange}: Props) => {
   useEffect(() => {
     if (!isDrag) {
       w.value = withTiming(val * (containerW / maxVal), {
-        duration: 200,
+        duration: 250,
         easing: Easing.linear,
       });
     }
   }, [val]);
 
   const handleProgess = (currProg: number) => {
-    const curr = (currProg / containerW) * maxVal;
+    const curr = fixedNum((currProg / containerW) * maxVal, decimalCount);
 
     onChange(curr);
   };
@@ -95,7 +97,7 @@ export default Progessbar;
 const styles = StyleSheet.create({
   container: {
     width: '80%',
-    height: 14,
+    height: 18,
     backgroundColor: 'gray',
     borderRadius: 999,
     alignItems: 'flex-start',

@@ -14,29 +14,44 @@
       "Display": "I don't know if I have the time.",
       "Words": [
         {
-          "Word": "Thầy ơi,",
+          "Word": "i",
           "Offset": 2700000,
           "Duration": 400000
         },
         {
-          "Word": "cho em",
+          "Word": "don't",
+          "Offset": 3500000,
+          "Duration": 2800000
+        },
+        {
+          "Word": "know",
+          "Offset": 6300000,
+          "Duration": 2400000
+        },
+        {
+          "Word": "if",
+          "Offset": 8700000,
+          "Duration": 2400000
+        },
+        {
+          "Word": "i",
+          "Offset": 11100000,
+          "Duration": 400000
+        },
+        {
+          "Word": "have",
           "Offset": 11500000,
           "Duration": 3600000
         },
         {
-          "Word": "xin nghỉ",
+          "Word": "the",
           "Offset": 15100000,
           "Duration": 2000000
         },
         {
-          "Word": "ốm",
-          "Offset": 15100000,
-          "Duration": 2000000
-        },
-        {
-          "Word": "ngày mai",
-          "Offset": 15100000,
-          "Duration": 2000000
+          "Word": "time",
+          "Offset": 17100000,
+          "Duration": 5200000
         }
       ]
     }

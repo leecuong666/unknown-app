@@ -1,29 +1,30 @@
-import {StyleSheet, Text, View} from 'react-native';
-import React, {useEffect} from 'react';
-import {Word} from '../../types/voiceText';
+import {StyleSheet} from 'react-native';
+import React from 'react';
 import Animated, {
   interpolateColor,
   useAnimatedStyle,
+  useDerivedValue,
   useSharedValue,
   withTiming,
 } from 'react-native-reanimated';
 
-interface Props extends Word {
+interface Props {
+  word?: string;
   isHL?: boolean;
 }
 
-const TextHighlight = ({Word, Offset, Duration, isHL = false}: Props) => {
-  const highlight = useSharedValue(isHL ? 0 : 1);
+const TextHighlight = ({word, isHL = false}: Props) => {
+  const highlight = useSharedValue(isHL ? 1 : 0);
 
-  useEffect(() => {
-    highlight.value = withTiming(isHL ? 0 : 1, {duration: 500});
+  useDerivedValue(() => {
+    highlight.value = withTiming(isHL ? 1 : 0, {duration: 250});
   }, [isHL]);
 
   const bgStyle = useAnimatedStyle(() => {
     return {
       backgroundColor: interpolateColor(
         highlight.value,
-        [0, 1],
+        [1, 0],
         ['#1a496560', 'transparent'],
       ),
     };
@@ -31,14 +32,14 @@ const TextHighlight = ({Word, Offset, Duration, isHL = false}: Props) => {
 
   const textStyle = useAnimatedStyle(() => {
     return {
-      color: interpolateColor(highlight.value, [0, 1], ['white', 'gray']),
+      color: interpolateColor(highlight.value, [1, 0], ['white', 'gray']),
     };
   });
 
   return (
     <Animated.View style={[styles.container, bgStyle]}>
       <Animated.Text style={[styles.wordStyle, textStyle]}>
-        {Word}
+        {word}
       </Animated.Text>
     </Animated.View>
   );
@@ -49,7 +50,7 @@ export default TextHighlight;
 const styles = StyleSheet.create({
   container: {
     borderRadius: 6,
-    padding: 3,
+    padding: 3.6,
   },
 
   wordStyle: {
