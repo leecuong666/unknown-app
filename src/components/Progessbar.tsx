@@ -14,13 +14,22 @@ interface Props {
   maxVal?: number;
   decimalCount?: number;
   onChange: (val: number) => void;
+  onDragging?: () => void;
+  onDraggingEnd?: () => void;
 }
 
 function clamp(val: number, min: number, max: number) {
   return Math.min(Math.max(val, min), max);
 }
 
-const Progessbar = ({val, decimalCount = 1, maxVal = 1, onChange}: Props) => {
+const Progessbar = ({
+  val,
+  decimalCount = 1,
+  maxVal = 1,
+  onChange,
+  onDragging,
+  onDraggingEnd,
+}: Props) => {
   const w = useSharedValue(val);
   const scale = useSharedValue(1);
   const [isDrag, setIsDrag] = useState(false);
@@ -42,9 +51,8 @@ const Progessbar = ({val, decimalCount = 1, maxVal = 1, onChange}: Props) => {
   };
 
   const drag = Gesture.Pan()
-    .minDistance(0.1)
+    .minDistance(1)
     .onUpdate(e => {
-      setIsDrag(true);
       w.value = withTiming(clamp(e.x, 0, containerW), {
         duration: 100,
         easing: Easing.linear,
@@ -53,10 +61,13 @@ const Progessbar = ({val, decimalCount = 1, maxVal = 1, onChange}: Props) => {
       handleProgess(w.value);
     })
     .onBegin(() => {
+      setIsDrag(true);
       scale.value = withTiming(1.12, {
         duration: 500,
         easing: Easing.bezier(0.31, 0.04, 0.03, 1.04),
       });
+
+      onDragging && onDragging();
     })
     .onFinalize(() => {
       setIsDrag(false);
@@ -64,6 +75,8 @@ const Progessbar = ({val, decimalCount = 1, maxVal = 1, onChange}: Props) => {
         duration: 250,
         easing: Easing.bezier(0.82, 0.06, 0.42, 1.01),
       });
+
+      onDraggingEnd && onDraggingEnd();
     })
     .runOnJS(true);
 
