@@ -2305,6 +2305,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-native-community/slider@npm:^4.5.5":
+  version: 4.5.5
+  resolution: "@react-native-community/slider@npm:4.5.5"
+  checksum: 10c0/78c3364c072bbc82300612a625bced682b666145dce229e7beb87f93dde5f66a955e1cca4848f662f1a9d2246f26d4717ece5d4f86cd350a295db184c024002b
+  languageName: node
+  linkType: hard
+
 "@react-native/assets-registry@npm:^0.72.0":
   version: 0.72.0
   resolution: "@react-native/assets-registry@npm:0.72.0"
@@ -2891,6 +2898,7 @@ __metadata:
     "@babel/core": "npm:^7.20.0"
     "@babel/preset-env": "npm:^7.20.0"
     "@babel/runtime": "npm:^7.20.0"
+    "@react-native-community/slider": "npm:^4.5.5"
     "@react-native/eslint-config": "npm:^0.72.2"
     "@react-native/metro-config": "npm:^0.72.11"
     "@shopify/flash-list": "npm:^1.7.2"

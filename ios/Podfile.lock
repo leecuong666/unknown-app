@@ -380,6 +380,9 @@ PODS:
     - React
     - React-callinvoker
     - React-Core
+  - react-native-slider (4.5.5):
+    - RCT-Folly (= 2021.07.22.00)
+    - React-Core
   - react-native-video (6.8.0):
     - RCT-Folly (= 2021.07.22.00)
     - React-Core
@@ -586,6 +589,7 @@ DEPENDENCIES:
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
   - "react-native-skia (from `../node_modules/@shopify/react-native-skia`)"
+  - "react-native-slider (from `../node_modules/@react-native-community/slider`)"
   - react-native-video (from `../node_modules/react-native-video`)
   - React-NativeModulesApple (from `../node_modules/react-native/ReactCommon/react/nativemodule/core/platform/ios`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
@@ -673,6 +677,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/logger"
   react-native-skia:
     :path: "../node_modules/@shopify/react-native-skia"
+  react-native-slider:
+    :path: "../node_modules/@react-native-community/slider"
   react-native-video:
     :path: "../node_modules/react-native-video"
   React-NativeModulesApple:
@@ -755,6 +761,7 @@ SPEC CHECKSUMS:
   React-jsinspector: 194e32c6aab382d88713ad3dd0025c5f5c4ee072
   React-logger: cebf22b6cf43434e471dc561e5911b40ac01d289
   react-native-skia: f93cbec31ba8d0e61d328167c3ef3b87c8e579c5
+  react-native-slider: 3ce2efe4e261f6e000622ec44536faca44bb13d3
   react-native-video: 3e78074133ce8b415cbf67a39864999cecef0c91
   React-NativeModulesApple: 02e35e9a51e10c6422f04f5e4076a7c02243fff2
   React-perflogger: e3596db7e753f51766bceadc061936ef1472edc3

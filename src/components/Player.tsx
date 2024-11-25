@@ -1,6 +1,10 @@
 import {ViewStyle} from 'react-native';
 import React, {forwardRef} from 'react';
-import Video, {OnProgressData, ReactVideoProps} from 'react-native-video';
+import Video, {
+  OnLoadData,
+  OnProgressData,
+  ReactVideoProps,
+} from 'react-native-video';
 
 interface Props {
   uri: string;
@@ -9,6 +13,7 @@ interface Props {
   isMuted?: boolean;
   isRepeat?: boolean;
   otherProps?: ReactVideoProps;
+  onLoadVideo?: (data: OnLoadData) => void;
   onProgessVideo: (data: OnProgressData) => void;
 }
 
@@ -20,6 +25,7 @@ const Player = (
     isMuted = false,
     isRepeat = true,
     otherProps,
+    onLoadVideo,
     onProgessVideo,
   }: Props,
   ref: any,
@@ -35,6 +41,7 @@ const Player = (
       controls={false}
       progressUpdateInterval={10}
       onProgress={onProgessVideo}
+      onLoad={onLoadVideo}
       {...otherProps}
     />
   );

@@ -1,44 +1,41 @@
 import {SafeAreaView, StyleSheet, View} from 'react-native';
-import React, {useRef, useState} from 'react';
-import Progessbar from '../../components/Progessbar';
+import React, {useCallback, useRef, useState} from 'react';
 import TextList from './TextList';
 import voiceData from '../../data/voice-detect.json';
-import {tickToNanoS, Time, timeConvert} from '../../util/datetime';
-import AudioRecorderPlayer from 'react-native-audio-recorder-player';
 import Player from '../../components/Player';
-import {OnProgressData, VideoRef} from 'react-native-video';
+import {OnLoadData, OnProgressData, VideoRef} from 'react-native-video';
 import {fixedNum} from '../../util/num';
+import SliderBar from '../../components/Slider';
+import Progessbar from '../../components/Progessbar';
 
-const maxS = timeConvert(tickToNanoS(voiceData.Duration), Time.nanoSecond);
-console.log(maxS);
-
-const audioRecorderPlayer = new AudioRecorderPlayer();
-audioRecorderPlayer.setSubscriptionDuration(0.01);
+const url = `https://leecuong666.github.io/resource/test.mp3`;
 
 const Home = () => {
   const vidRef = useRef<VideoRef>(null);
   const [currProg, setCurrProg] = useState(0);
-  const [isPause, setIsPause] = useState(false);
+  const [duration, setDuration] = useState(0);
 
   const handleSliderChange = (val: number) => {
-    setCurrProg(val);
+    const seek = fixedNum(val, 2);
+    vidRef.current?.seek(seek);
+    setCurrProg(seek);
   };
 
-  const handleSliderDrag = () => {
-    console.log('pause');
+  // const handleSliderDrag = () => {
+  //   vidRef.current?.pause();
+  // };
 
-    setIsPause(true);
-  };
+  // const handleSliderDragEnd = () => {
+  //   vidRef.current?.resume();
+  // };
 
-  const handleSliderDragEnd = () => {
-    console.log('keep');
-
-    setIsPause(false);
-  };
+  const handleLoadVideo = useCallback((data: OnLoadData) => {
+    setCurrProg(fixedNum(data.currentTime, 2));
+    setDuration(fixedNum(data.duration, 2));
+  }, []);
 
   const handleProgressVideo = (data: OnProgressData) => {
     const currSec = fixedNum(data.currentTime, 2);
-    console.log(currSec);
 
     setCurrProg(currSec);
   };
@@ -50,20 +47,29 @@ const Home = () => {
       </View>
 
       <View style={styles.pgContainer}>
-        <Progessbar
+        {/* <Progessbar
           val={currProg}
           decimalCount={2}
-          maxVal={maxS}
+          maxVal={duration}
           onChange={handleSliderChange}
           onDragging={handleSliderDrag}
           onDraggingEnd={handleSliderDragEnd}
+        /> */}
+
+        <SliderBar
+          currTime={currProg}
+          duration={duration}
+          onSliderChange={handleSliderChange}
+          // onSliderStart={handleSliderDrag}
+          // onSliderEnd={handleSliderDragEnd}
         />
       </View>
 
       <Player
+        uri={url}
         ref={vidRef}
-        isPause={isPause}
-        uri="https://leecuong666.github.io/resource/test.mp3"
+        isRepeat={true}
+        onLoadVideo={handleLoadVideo}
         onProgessVideo={handleProgressVideo}
       />
     </SafeAreaView>
