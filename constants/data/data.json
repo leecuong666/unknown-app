@@ -1,0 +1,59 @@
+{
+  "Id": "b66a57894af54971ac71574a467f4fcb",
+  "RecognitionStatus": 0,
+  "Offset": 2700000,
+  "Duration": 22600000,
+  "Channel": 0,
+  "DisplayText": "I don't know if I have the time.",
+  "NBest": [
+    {
+      "Confidence": 0.871681,
+      "Lexical": "i don't know if i have the time",
+      "ITN": "i don't know if i have the time",
+      "MaskedITN": "i don't know if i have the time",
+      "Display": "I don't know if I have the time.",
+      "Words": [
+        {
+          "Word": "i",
+          "Offset": 2700000,
+          "Duration": 400000
+        },
+        {
+          "Word": "don't",
+          "Offset": 3500000,
+          "Duration": 2800000
+        },
+        {
+          "Word": "know",
+          "Offset": 6300000,
+          "Duration": 2400000
+        },
+        {
+          "Word": "if",
+          "Offset": 8700000,
+          "Duration": 2400000
+        },
+        {
+          "Word": "i",
+          "Offset": 11100000,
+          "Duration": 400000
+        },
+        {
+          "Word": "have",
+          "Offset": 11500000,
+          "Duration": 3600000
+        },
+        {
+          "Word": "the",
+          "Offset": 15100000,
+          "Duration": 2000000
+        },
+        {
+          "Word": "time",
+          "Offset": 17100000,
+          "Duration": 5200000
+        }
+      ]
+    }
+  ]
+}
