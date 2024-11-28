@@ -1,0 +1,214 @@
+{
+  "Id": "90d2081e713b4e3b95669a798b55fdba",
+  "RecognitionStatus": 0,
+  "Offset": 1900000,
+  "Duration": 88900000,
+  "Channel": 0,
+  "DisplayText": "Tổng thống đắc cử Donald Trump đã chọn ông kết calloc làm đặc phái viên về vấn đề Ukraine liên bang nga một vai trò mới được hình thành do cuộc chiến đang diễn ra giữa 2 quốc gia.",
+  "NBest": [
+    {
+      "Confidence": 0.8960243,
+      "Lexical": "tổng thống đắc cử donald trump đã chọn ông kết calloc làm đặc phái viên về vấn đề ukraine liên bang nga một vai trò mới được hình thành do cuộc chiến đang diễn ra giữa hai quốc gia",
+      "ITN": "tổng thống đắc cử donald trump đã chọn ông kết calloc làm đặc phái viên về vấn đề ukraine liên bang nga một vai trò mới được hình thành do cuộc chiến đang diễn ra giữa 2 quốc gia",
+      "MaskedITN": "tổng thống đắc cử donald trump đã chọn ông kết calloc làm đặc phái viên về vấn đề ukraine liên bang nga một vai trò mới được hình thành do cuộc chiến đang diễn ra giữa 2 quốc gia",
+      "Display": "Tổng thống đắc cử Donald Trump đã chọn ông kết calloc làm đặc phái viên về vấn đề Ukraine liên bang nga một vai trò mới được hình thành do cuộc chiến đang diễn ra giữa 2 quốc gia.",
+      "Words": [
+        {
+          "Word": "tổng",
+          "Offset": 1900000,
+          "Duration": 1900000
+        },
+        {
+          "Word": "thống",
+          "Offset": 3900000,
+          "Duration": 2000000
+        },
+        {
+          "Word": "đắc",
+          "Offset": 6000000,
+          "Duration": 1400000
+        },
+        {
+          "Word": "cử",
+          "Offset": 7500000,
+          "Duration": 1900000
+        },
+        {
+          "Word": "donald",
+          "Offset": 9500000,
+          "Duration": 3700000
+        },
+        {
+          "Word": "trump",
+          "Offset": 13300000,
+          "Duration": 3300000
+        },
+        {
+          "Word": "đã",
+          "Offset": 16700000,
+          "Duration": 1100000
+        },
+        {
+          "Word": "chọn",
+          "Offset": 17900000,
+          "Duration": 2300000
+        },
+        {
+          "Word": "ông",
+          "Offset": 20300000,
+          "Duration": 1500000
+        },
+        {
+          "Word": "kết",
+          "Offset": 21900000,
+          "Duration": 2100000
+        },
+        {
+          "Word": "calloc",
+          "Offset": 24100000,
+          "Duration": 4100000
+        },
+        {
+          "Word": "làm",
+          "Offset": 28300000,
+          "Duration": 2500000
+        },
+        {
+          "Word": "đặc",
+          "Offset": 30900000,
+          "Duration": 1300000
+        },
+        {
+          "Word": "phái",
+          "Offset": 32300000,
+          "Duration": 1700000
+        },
+        {
+          "Word": "viên",
+          "Offset": 34100000,
+          "Duration": 2500000
+        },
+        {
+          "Word": "về",
+          "Offset": 36700000,
+          "Duration": 1300000
+        },
+        {
+          "Word": "vấn",
+          "Offset": 38100000,
+          "Duration": 1500000
+        },
+        {
+          "Word": "đề",
+          "Offset": 39700000,
+          "Duration": 1300000
+        },
+        {
+          "Word": "ukraine",
+          "Offset": 41100000,
+          "Duration": 5700000
+        },
+        {
+          "Word": "liên",
+          "Offset": 46900000,
+          "Duration": 1700000
+        },
+        {
+          "Word": "bang",
+          "Offset": 48700000,
+          "Duration": 1700000
+        },
+        {
+          "Word": "nga",
+          "Offset": 50500000,
+          "Duration": 2900000
+        },
+        {
+          "Word": "một",
+          "Offset": 55900000,
+          "Duration": 2300000
+        },
+        {
+          "Word": "vai",
+          "Offset": 58300000,
+          "Duration": 1500000
+        },
+        {
+          "Word": "trò",
+          "Offset": 59900000,
+          "Duration": 2300000
+        },
+        {
+          "Word": "mới",
+          "Offset": 62300000,
+          "Duration": 1800000
+        },
+        {
+          "Word": "được",
+          "Offset": 64200000,
+          "Duration": 1200000
+        },
+        {
+          "Word": "hình",
+          "Offset": 65500000,
+          "Duration": 1500000
+        },
+        {
+          "Word": "thành",
+          "Offset": 67100000,
+          "Duration": 2900000
+        },
+        {
+          "Word": "do",
+          "Offset": 70100000,
+          "Duration": 1500000
+        },
+        {
+          "Word": "cuộc",
+          "Offset": 71700000,
+          "Duration": 2100000
+        },
+        {
+          "Word": "chiến",
+          "Offset": 73900000,
+          "Duration": 1900000
+        },
+        {
+          "Word": "đang",
+          "Offset": 75900000,
+          "Duration": 1700000
+        },
+        {
+          "Word": "diễn",
+          "Offset": 77700000,
+          "Duration": 1500000
+        },
+        {
+          "Word": "ra",
+          "Offset": 79300000,
+          "Duration": 2500000
+        },
+        {
+          "Word": "giữa",
+          "Offset": 81900000,
+          "Duration": 1700000
+        },
+        {
+          "Word": "hai",
+          "Offset": 83700000,
+          "Duration": 1900000
+        },
+        {
+          "Word": "quốc",
+          "Offset": 85700000,
+          "Duration": 1700000
+        },
+        {
+          "Word": "gia",
+          "Offset": 87500000,
+          "Duration": 3300000
+        }
+      ]
+    }
+  ]
+}
